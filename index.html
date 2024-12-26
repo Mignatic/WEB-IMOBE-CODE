@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Platform</title>
+    <!-- إضافة أداة Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en' },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <header>
+        <div id="google_translate_element" class="google-translate"></div> <!-- أداة الترجمة -->
+        <h1>Services Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#real-estate">Real Estate</a></li>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#lands">Lands</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#bikes">Bikes</a></li>
+                <li><a href="#motorcycles">Motorcycles</a></li>
+                <li><a href="#phones">Phones</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#trucks">Trucks</a></li>
+                <li><a href="#electronics-materials">Electronics</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- شريط البحث -->
+    <section class="search-bar">
+        <input type="text" placeholder="Search for services..." id="searchInput">
+        <button onclick="search()">Search</button>
+    </section>
+
+    <!-- شبكة الخدمات -->
+    <main>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Real Estate</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Apartments</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Lands</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Cars</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Bikes</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Motorcycles</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Phones</h3>
+                    <p>Buy and Sell Phones</p>
+                </div>
+                <div class="card">
+                    <h3>Books</h3>
+                    <p>Buy and Sell Books</p>
+                </div>
+                <div class="card">
+                    <h3>Hotels</h3>
+                    <p>Rent or Sell</p>
+                </div>
+                <div class="card">
+                    <h3>Trucks</h3>
+                    <p>Buy, Sell, or Rent</p>
+                </div>
+                <div class="card">
+                    <h3>Electronics</h3>
+                    <p>Buy and Sell Electronics</p>
+                </div>
+                <div class="card">
+                    <h3>Other Services</h3>
+                    <p>Various Other Services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- نموذج التسجيل -->
+        <section class="register" id="register">
+            <h2>Register</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>&copy; 2024 Services Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function search() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                if (cardText.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
