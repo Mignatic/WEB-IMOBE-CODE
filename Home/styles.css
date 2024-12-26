@@ -161,6 +161,19 @@ footer {
     padding: 1rem;
 }
 
+footer a {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #f4a261;
+    text-decoration: none;
+}
+
 /* Google Translate */
 .google-translate {
     text-align: right;
