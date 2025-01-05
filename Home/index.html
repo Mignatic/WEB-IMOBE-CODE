@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services Platform</title>
-    <!-- إضافة أداة Google Translate -->
+    <!-- Google Translate Widget -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- رأس الصفحة -->
+    <!-- Header -->
     <header>
-        <div id="google_translate_element" class="google-translate"></div> <!-- أداة الترجمة -->
+        <div id="google_translate_element" class="google-translate"></div> <!-- Google Translate Widget -->
         <h1>Services Platform</h1>
         <nav>
             <ul>
@@ -39,13 +39,13 @@
         </nav>
     </header>
 
-    <!-- شريط البحث -->
+    <!-- Search Bar -->
     <section class="search-bar">
         <input type="text" placeholder="Search for services..." id="searchInput">
         <button onclick="search()">Search</button>
     </section>
 
-    <!-- شبكة الخدمات -->
+    <!-- Services Grid -->
     <main>
         <section class="services">
             <h2>Our Services</h2>
@@ -101,7 +101,7 @@
             </div>
         </section>
 
-        <!-- نموذج التسجيل -->
+        <!-- Registration Form -->
         <section class="register" id="register">
             <h2>Register</h2>
             <form>
@@ -119,30 +119,43 @@
         </section>
     </main>
 
-    <!-- تذييل الصفحة -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Services Platform. All rights reserved.</p>
         <p>
-            <a href="terms.html" target="_blank">Terms of Use</a> | 
-            <a href="cookies.html" target="_blank">Cookies Policy</a> | 
-            <a href="cookies.html" target="_blank">Contact</a>
+            <a href="../Terms cookies/terms.html" target="_blank">Terms of Use</a> | 
+            <a href="../Terms cookies/cookies.html" target="_blank">Cookies Policy</a> | 
+            <a href="../Contact/contact.html" target="_blank">Contact</a>
         </p>
     </footer>
 
     <script>
+        // Search Functionality
         function search() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const cards = document.querySelectorAll('.card');
 
             cards.forEach(card => {
                 const cardText = card.textContent.toLowerCase();
-                if (cardText.includes(input)) {
+                if (input === "" || cardText.includes(input)) {
                     card.style.display = "block";
                 } else {
                     card.style.display = "none";
                 }
             });
         }
+
+        // Form Validation
+        document.querySelector('.register form').addEventListener('submit', function (e) {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !email || !password) {
+                e.preventDefault();
+                alert('Please fill out all fields.');
+            }
+        });
     </script>
 </body>
 </html>
